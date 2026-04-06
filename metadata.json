@@ -1,0 +1,7 @@
+{
+  "name": "MediMatch: Brand vs Generic",
+  "description": "Instantly identify medicines via image or name, find their generic equivalents, and view a detailed comparison of cost, efficacy, and usage.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediMatch - Medicine Identifier & Comparator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f0fdfa; /* Slate-50 / Teal-50 tint */
+      }
+      
+      @media print {
+        body {
+          background-color: white !important;
+          print-color-adjust: exact !important;
+          -webkit-print-color-adjust: exact !important;
+        }
+        
+        /* Hide UI elements that shouldn't be in the PDF */
+        nav, 
+        button, 
+        .no-print,
+        footer {
+          display: none !important;
+        }
+
+        /* Ensure the main content takes full width */
+        #root {
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        /* Remove shadows and animations for cleaner print */
+        * {
+          box-shadow: none !important;
+          animation: none !important;
+          transition: none !important;
+        }
+
+        /* Ensure text contrasts are good */
+        p, h1, h2, h3, h4, h5, h6, span {
+          color: black !important;
+        }
+        
+        /* Preserve specific background colors for the comparison table */
+        .bg-blue-50\/50 { background-color: #eff6ff !important; }
+        .bg-emerald-50\/50 { background-color: #ecfdf5 !important; }
+        .bg-teal-900 { background-color: #134e4a !important; color: white !important; }
+        .bg-teal-900 p, .bg-teal-900 h3 { color: white !important; }
+        
+        /* Add a print footer */
+        .print-footer {
+          display: block !important;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+          font-size: 10px;
+          color: #666 !important;
+          padding: 10px;
+          border-top: 1px solid #ddd;
+        }
+      }
+      
+      .print-footer {
+        display: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
